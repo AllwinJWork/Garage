@@ -1,0 +1,55 @@
+package intermediate;
+
+public abstract class Vehicles {
+	private static int id = 0;
+
+	private int numWheels;
+
+	private String colour;
+
+	private static int count = 0;// Question 1; changing to static.
+
+	public Vehicles(int numWheels, String colour) {
+		super();
+		this.numWheels = numWheels;
+		this.colour = colour;
+		Vehicles.id = ++count; // Question 2; static vehicle count.
+
+	}
+
+	public abstract int calcBill();
+
+	public int getId() {
+		return Vehicles.id;
+	}
+
+	public void setId(int id) {
+		Vehicles.id = id;
+	}
+
+	public int getNumWheels() {
+		return this.numWheels;
+	}
+
+	public void setNumWheels(int numWheels) {
+		this.numWheels = numWheels;
+	}
+
+	public String getColour() {
+		return this.colour;
+	}
+
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [numWheels=" + this.numWheels + ", colour=" + this.colour + "]";
+	}
+
+	public static int getCount() {
+		return count;
+	}
+
+}
